@@ -5,27 +5,27 @@ Welcome to the AI Assistant project, a versatile and powerful tool designed to a
 Please note that a voice cloning model named Tortoise was not used in this project due to its slow processing speed, which could disrupt the real-time user experience. Instead, we have opted for efficient alternatives to ensure a seamless interaction with the AI assistant.
 
 ## Features
-# Face Recognition:
+### Face Recognition:
 
 Utilizes FaceNet and MTCNN for accurate face recognition.
 Recognizes faces in images and video streams.
 
-# Object Detection:
+### Object Detection:
 
 Implements YOLOv8 for robust object detection.
 Detects and identifies objects in images and video streams.
 
-# Conversational Abilities:
+### Conversational Abilities:
 
 Employs LLAMA2 for natural language understanding and generation.
 Engages in conversations with users, providing information and assistance.
 
-# Speech Interaction:
+### Speech Interaction:
 
 Text-to-speech functionality for converting written text into spoken words.
 Speech-to-text functionality for converting spoken words into written text.
 
-# Casual Task Automation:
+### Casual Task Automation:
 
 Performs casual tasks like reading out emails to enhance user convenience.
 Installation
