@@ -38,13 +38,15 @@ git clone https://github.com/shwetabh-23/AI-assistant.git
 Install dependencies:
 
 pip install -r requirements.txt
+
 Run the assistant:
 
 python main.py
+
 Note : You'll have to manually change the location of the saved images described in the first few lines of main.py
 
 ## Contributing
-We welcome contributions to enhance and expand the capabilities of the AI Assistant. Feel free to open issues, submit pull requests, or reach out with suggestions and feedback.
+I welcome contributions to enhance and expand the capabilities of the AI Assistant. Feel free to open issues, submit pull requests, or reach out with suggestions and feedback.
 
 ## License
 This project is licensed under the GPL-3.0 License.
