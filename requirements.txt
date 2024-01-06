@@ -3,7 +3,7 @@ opencv-python
 gTTS
 playsound
 SpeechRecognition
-
+Ultralytics
 datasets
 transformers
 torch 
@@ -21,3 +21,5 @@ trl
 google-api-python-client
 google-auth-httplib2
 google-auth-oauthlib
+
+Flask

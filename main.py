@@ -55,7 +55,7 @@ if user_exists:
         print('User : ', query)
 
         if 'i am satisfied with my care' in query.strip().lower():
-            break
+            sys.exit()
 
         elif 'emails' in query.strip().lower() or 'email' in query.strip().lower():
             text_to_speech('Sure, emails displayed in your screen')
