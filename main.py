@@ -7,8 +7,9 @@ from googleapis import get_date_day, get_emails, get_time_of_day
 import os
 import sys
 from system_utils import restart_program, execute_terminal_command, terminate_process_by_pid
+from ObjectDetection import object_detection
 
-all_img_path = r'/home/harsh/AI-Projects/JARVIS---AI-Assistant/Images'
+all_img_path = r'/home/harsh/AI-Projects/AI-Assistant/Images'
 
 base_model_name = "NousResearch/Llama-2-7b-chat-hf"
 
@@ -55,15 +56,40 @@ if user_exists:
 
         if 'i am satisfied with my care' in query.strip().lower():
             break
+
         elif 'emails' in query.strip().lower() or 'email' in query.strip().lower():
             text_to_speech('Sure, emails displayed in your screen')
             for subject in emails.keys():
                 print(f'{subject} : {emails[subject]}')
                 print('\n')
+        elif 'object' in query.strip().lower() or 'detect' in query.strip().lower() or 'holding' in query.strip().lower() or 'hand' in query.strip().lower():
+            text_to_speech('Object detection activated, press space to capture the object on the screen')
+
+            objects = object_detection()
+            all_objs = ''
+            for object in objects:
+                all_objs += ', '
+                all_objs += object
+
+            while True : 
+                query = speech_to_text()
+                n = 0
+                print('User : ', query)
+                prelude = f'you are currently in object detection mode. the detected objects in the screen are {all_objs}. Based on this information, answer the question : ' if n == 0 else query
+                if 'exit' in query.strip().lower() or 'quit' in query.strip().lower():
+                    break
+                elif 'i am satisfied with my care' in query.strip().lower():
+                    sys.exit()
+                else:
+                    response = llama_chat(query = (prelude + query), base_model=base_model, llama_tokenizer=llama_tokenizer)
+                    print(f'{day} :', response)
+                    text_to_speech(response)
+                    n += 1
+
         else:
-            prelude = 'You are my assistant, your name is friday, answer the question and keep it to the point : '
+            prelude = f'You are my assistant, your name is {day}, answer the question and keep it to the point : '
             response = llama_chat(query = (prelude + query), base_model=base_model, llama_tokenizer=llama_tokenizer)
-            print('Friday :', response)
+            print(f'{day} :', response)
             text_to_speech(response)
 
 else:

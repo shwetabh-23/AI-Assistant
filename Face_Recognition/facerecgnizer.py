@@ -43,6 +43,7 @@ def check_user(all_img_path):
                     dist = calc_dist(curr_embed, check_embed)
                     distance[dist] = name
                 min_dist = min(distance.keys())
+                #breakpoint()
                 if min_dist < 0.7:
                     os.remove(img_path)
                     cam.release()
