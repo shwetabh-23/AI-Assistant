@@ -28,7 +28,8 @@ Speech-to-text functionality for converting spoken words into written text.
 ### Casual Task Automation:
 
 Performs casual tasks like reading out emails to enhance user convenience.
-Installation
+
+
 ## To use the AI Assistant, follow these steps:
 
 Clone the repository:
